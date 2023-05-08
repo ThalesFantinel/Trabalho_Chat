@@ -1,30 +1,30 @@
 const db = require("./db");
-function listarSalas(){
+function listarSalas() {
     return db.findAll("salas");
 }
 
-function listarSalas(){
+function listarSalas() {
     return[
         {
-            "_id": {
-                "$oid": "643ece43ea11e6e5b0421f10"
+            "_id":{
+                "$oid": "938rseaos0w3735d"
             },
-            "nome": "Guerreiros da InfoCimol",
-            "tipo": "publica"
+            "nome":"Guerreiros da InfoCimol",
+            "tipo":"publica"
         },{
             "_id": {
-                "$oid": "643ecec1ea11e6e5b0421f12"
+                "$oid": "gdgteuey7443uwrui"
             },
             "nome": "Só os confirmados da INFO",
             "tipo": "privada",
             "chave": "at8q4haw"
         },{
             "_id": {
-                "$oid": "643f22a2ea11e6e5b0421f18"
+                "$iod": "oer84iufhce4r8"
             },
             "nome": "Guerreiros da INFO",
             "tipo": "publico"
-        }  
+        }
     ];
 }
 
