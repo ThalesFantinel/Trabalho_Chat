@@ -8,13 +8,18 @@ async function connect() {
     const client = new MongoClient(process.env.DB_HOST);
     await client.connect();
 
-    singleton = cliente.db(process.env.DB_DATABASE);
+    singleton = client.db(process.env.DB_DATABASE);
     return singleton;
 }
 
 async function findAll(collection) {
     const db = await connect();
-    return db.cfollection(collection).findAll().toArray();
+    return db.collection(collection).findAll().toArray();
+}
+
+async function insertOne(collection, objeto){
+    const db = await connect();
+    return db.collection(collection).insertOne(objeto)
 }
 
 module.exports = { findAll }

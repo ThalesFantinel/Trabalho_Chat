@@ -1,6 +1,6 @@
 const salaModel = require('../model/salaModel');
 
-exports.get=async()=>{
+exports.get=async() => {
     return await salaModel.listarSalas();
 }
 
