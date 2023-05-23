@@ -17,9 +17,25 @@ async function findAll(collection) {
     return db.collection(collection).findAll().toArray();
 }
 
-async function insertOne(collection, objeto){
+async function insertOne(collection, object){
     const db = await connect();
-    return db.collection(collection).insertOne(objeto)
+    const result = await db.collection(collection).insertOne(object);
+    return result;
 }
 
-module.exports = { findAll }
+async function findOne(collection, id){
+    const db = await connect();
+    const obj = await db.collection(collection).findOne({_id: new ObjectId(id)});
+    if(obj){
+        return obj;
+    }
+    return false;
+}
+
+async function updateOne(collection, object, param){
+    const db = await connect();
+    const result = await db.collection(collection).updateOne(param, {$set: object});
+    return result;
+}
+
+module.exports = { findAll, insertOne, findOne, updateOne};
